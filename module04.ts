@@ -10,7 +10,10 @@
 
 /*  sortDescending is a comparison function that tells the sort method how to sort 
     numbers in descending order */
-function sortDescending(a, b) {
+
+type UpOrDown = (a: number, b:number) => number;
+
+let sortDescending: UpOrDown = (a, b) => {
 if (a > b) {
     return -1;
 } else if (b > a) {
@@ -22,7 +25,7 @@ if (a > b) {
 
 /*  sortDescending is a comparison function that tells the sort method how to sort 
     numbers in ascending order. */
-function sortAscending(a, b) {
+let sortAscending: UpOrDown = (a, b) => {
 if (a > b) {
     return 1;
 } else if (b > a) {
