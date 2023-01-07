@@ -41,9 +41,11 @@ if (a > b) {
 
 /*  TODO: Update the BuildArray function. */
 
-function buildArray(items, sortOrder) {
-    let randomNumbers = [];
-    let nextNumber;
+type sortConfiguration = ('ascending' | 'descending');
+
+function buildArray(items: number, sortOrder: sortConfiguration): number[] {
+    let randomNumbers: number[] = [];
+    let nextNumber: number;
     for (let counter = 0; counter < items; counter++) {
         nextNumber = Math.ceil(Math.random() * (100 - 1));
         if (randomNumbers.indexOf(nextNumber) === -1) {
@@ -65,9 +67,9 @@ let myArray2 = buildArray(8, 'descending');
 /*  EXERCISE 2
     TODO: Update the LoanCalculator function. */
 
-function loanCalculator (principle, interestRate, months) {
-    let interest = interestRate / 1200;   // Calculates the monthly interest rate
-    let payment;
+let loanCalculator = (principle: number, interestRate: number, months = 12): string => {
+    let interest: number = interestRate / 1200;   // Calculates the monthly interest rate
+    let payment: number;
     payment = principle * interest / (1 - (Math.pow(1/(1 + interest), months)));
     return payment.toFixed(2);
 }
