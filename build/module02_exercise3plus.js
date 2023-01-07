@@ -8,6 +8,7 @@ var Seasons;
     Seasons[Seasons["Sprint"] = 2] = "Sprint";
     Seasons[Seasons["Summer"] = 3] = "Summer";
 })(Seasons || (Seasons = {}));
+// Receives the enum as key (0, 1, etc., also works) and assigns values to them
 const seasonMonths = {
     [Season.Fall]: "September to November",
     [Season.Winter]: "December to February",
