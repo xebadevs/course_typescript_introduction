@@ -22,8 +22,8 @@ interface ConventionalLoan extends Loan {
 
 function calculateInterestOnlyLoanPayment(loanTerms: Loan): string {
     // Calculates the monthly payment of an interest only loan
-    let interest = loanTerms.interestRate / 1200; // Calculates the Monthly Interest Rate of the loan
-    let payment;
+    let interest: number = loanTerms.interestRate / 1200; // Calculates the Monthly Interest Rate of the loan
+    let payment: number;
     payment = loanTerms.principal * interest;
     return 'The interest only loan payment is ' + payment.toFixed(2);
 }
